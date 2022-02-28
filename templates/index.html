@@ -75,8 +75,11 @@ section {
 </head>
 <main>
   <h1>URL Shortener</h1>
+
+  <!--Create the form that takes url-->
   <form id="post-form">
     {% csrf_token %}
+
   <input type="text" name="link" id="link" placeholder="Enter URL here">
   <div class="buttons">
     <button type="submit" id="shorten">Shorten</button>
@@ -99,7 +102,9 @@ section {
         csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
       },
       success: function(data){
-        $('h2').html("www.surls.ga/"+data)
+        // $('h2').html("www.surls.ga/"+data)
+        $('h2').html("localhost:8000/" + data)
+
       }
     });
   });
