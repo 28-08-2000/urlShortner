@@ -19,6 +19,7 @@ def create(request):
 
 		# save in url mode
 		new_url = Url(link=link, uuid=uid)
+		print(new_url)
 		new_url.save()
 
 		# return the response page
