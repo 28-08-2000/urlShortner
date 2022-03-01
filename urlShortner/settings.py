@@ -28,7 +28,8 @@ SECRET_KEY = 'rjtb^ws*amit_ei286)so*bkm5b5wj8a*k-t=pbl*eiozb9t%='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+# allowing all hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,11 +80,9 @@ WSGI_APPLICATION = 'urlShortner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# changed the database from sqlite to dj database url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config()
 }
 
 
