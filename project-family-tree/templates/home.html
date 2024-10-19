@@ -1,0 +1,48 @@
+<style type="text/css">
+    .div-center{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    }
+
+</style>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="details">
+    
+    <h2>Family Tree Creator</h2>
+    
+    <p>
+        In this app you can easily create your own personal tree. 
+        This web app has user functionality and your family tree would be private to you only.
+        This will help you organize your family history.
+    </p>
+
+</div>
+
+<!-- the main thing  -->
+{% if request.user.is_authenticated %}
+
+<!-- a div block in the center of screen -->
+
+<div class="div-center">
+    <button class="btn btn-dark">
+        <a class="nav-link headlinks" href="{% url 'create' %}">Create</a>
+    </button>
+</div>
+
+{% else %}
+    
+    <p class="div-center" style="text-align: center; background-color: lightgoldenrodyellow;">
+        Login to create your own Family tree.
+    </p>
+
+{% endif %}
+
+{% endblock content %}

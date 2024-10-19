@@ -1,0 +1,93 @@
+{% load static %}
+
+<style type="text/css">
+	
+	.margin {
+		margin-right: 1em;
+		}
+
+	.navbar-dark .navbar-brand {
+    color: #FF1493 ;
+		}
+
+	.headtitle{
+	  font-size: 28px;
+	  font-style: italic;
+	  font-weight: bold;
+	  font-family: 'Averia Serif Libre', cursive;
+		}
+	.headlinks{
+		font-size:20px;
+  	font-family: 'Averia Serif Libre';
+		}
+
+		.nav-link{
+		margin-top:10%;
+		}
+
+	.flexright{
+		position:relative;
+		right:16px;
+		}
+	.flexcont{
+		width:10em;
+		justify-content:space-evenly;
+		}
+
+	.material-icons{
+		color:white;
+		}
+</style>
+
+<!-- link to css assets -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap" rel="stylesheet">
+
+<!-- navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: auto;">
+	
+	<!-- the options in this bar -->
+	<a class="navbar-brand headtitle" style="color: whitesmoke; font-family: cursive;" href="{% url 'home' %}">FT Creator</a>
+
+		<!-- Main thing -->
+		{% if request.user.is_authenticated %}
+		
+		<ul class="navbar-nav mr-auto" style="position: absolute; left: 90%; top: 1%;">
+			<li class="nav-item dropdown" style="position: absolute; right: 10px; margin-top: 10px;">
+	        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Goto
+	        </a>
+
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+	          <a class="dropdown-item" href="{% url 'create' %}">Create</a>
+	          <a class="dropdown-item" href="{% url 'about' %}">About</a>
+
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="{% url 'account:logout' %}">Logout</a>
+	        
+	        </div>
+	      	
+	      	</li>
+
+		</ul>
+
+		{% else %}
+
+		<!-- other options for other pages -->
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="position: absolute; right: 1%;">
+		
+			<div class="flexright">
+				<!-- login and register button -->
+
+				<a class="btn btn-info margin " href="{% url 'account:login' %}">Login</a>
+
+				<a class="btn btn-danger margin " href="{% url 'account:register' %}">Register</a>
+			
+			</div>
+
+		</ul>
+
+		{% endif %}
+
+</nav>
