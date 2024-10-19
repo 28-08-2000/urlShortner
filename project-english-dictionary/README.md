@@ -1,4 +1,5 @@
-# EnglishDictionary-WebApp
- A learning project for Django
+# English Dictionary
 
-here [https://english-dictionary-dsm.herokuapp.com/]
+This web application is capable of giving you the meaning of input word.
+
+![alt text](image.png)
