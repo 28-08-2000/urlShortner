@@ -10,3 +10,7 @@ This repository is about learning Django and practice by creating projects.
 ## Some Commands
 
 `python manage.py migrate` - Migrate the database changes
+
+## Troubleshooting
+
+1. .gitignore for Django is same as python. If already commited then run `git rm --cached -r myFolder/` for removing them from tracking.
